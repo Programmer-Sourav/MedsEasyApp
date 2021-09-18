@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_margin="4dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:background="@drawable/background_drawable"
+            android:src="@mipmap/sexual_well"
+            android:id="@+id/medicine_category_pic_id"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:gravity="center"
+            android:textColor="#455a64"
+            android:textSize="12sp"
+            android:id="@+id/medicine_category_name">
+
+        </androidx.appcompat.widget.AppCompatTextView>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

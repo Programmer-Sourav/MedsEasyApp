@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:layout_width="208dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="192dp"
+            android:layout_height="192dp"
+            android:orientation="vertical"
+            android:layout_margin="8dp"
+            android:background="@drawable/background_drawable"
+           >
+
+            <TextView
+                android:id="@+id/discount"
+                android:layout_width="60dp"
+                android:layout_height="24dp"
+                android:background="@drawable/offer_bg"
+                android:gravity="center"
+                android:text="15% off"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="152dp"
+            android:layout_height="152dp" android:id="@+id/deals_image"
+            android:src="@mipmap/rec_l2"></androidx.appcompat.widget.AppCompatImageView>
+        </LinearLayout>
+        <TextView
+            android:layout_width="192dp"
+            android:layout_height="wrap_content"
+            android:text="Dettol Sanitizer - kills 99.99% germs "
+            android:textColor="#102027"
+            android:textStyle="bold"
+            android:textSize="16dp"
+            android:layout_margin="8dp"
+            android:id="@+id/deals_of_the_day_title"
+            ></TextView>
+        <TextView
+            android:layout_width="192dp"
+            android:layout_height="wrap_content"
+            android:text="MRP Rs. 299.00 "
+            android:textStyle="bold"
+            android:textSize="8dp"
+            android:layout_margin="8dp"
+            android:id="@+id/inr"
+            ></TextView>
+        <TextView
+            android:layout_width="192dp"
+            android:layout_height="wrap_content"
+            android:text="275.00"
+            android:textColor="#102027"
+            android:textStyle="bold"
+            android:textSize="16dp"
+            android:layout_margin="8dp"
+            android:id="@+id/discounted_price"
+            ></TextView>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

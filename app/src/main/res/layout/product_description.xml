@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none">
+    <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="84dp"
+        android:background="#f1f8e9">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_margin="32dp"
+            android:id="@+id/location_marker"
+            android:src="@mipmap/location_marker"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Deliver To"
+            android:id="@+id/deliver_prompt"
+            android:layout_toRightOf="@+id/location_marker"
+            android:layout_marginTop="32dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:text="799144 Udaipur"
+            android:id="@+id/deliver_pin"
+            android:textColor="@color/colorPrimary"
+            android:layout_toRightOf="@+id/location_marker"
+            android:layout_below="@+id/deliver_prompt"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp"/>
+
+        <TextView
+            android:id="@+id/chnage"
+            android:layout_width="128dp"
+            android:layout_height="32dp"
+            android:layout_below="@+id/deliver_prompt"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/deliver_pin"
+            android:text="Change"
+            android:gravity="center"
+            android:textSize="16dp"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="252dp"
+        android:background="#FFFFFF">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@mipmap/share"
+            android:id="@+id/share"
+            android:layout_alignParentRight="true"
+            android:layout_margin="16dp"/>
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_height="216dp"
+        android:id="@+id/product_thumbnail"
+        android:layout_below="@+id/share"
+        android:src="@mipmap/devices">
+    </androidx.appcompat.widget.AppCompatImageView>
+    </RelativeLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginTop="16dp"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:id="@+id/product_title"
+        android:text="SuperCido Oxymeter Oxygen Test Strips Box Of 100- awesome"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="Visit Supercedo Store"
+        android:layout_marginLeft="32dp"
+        android:id="@+id/visit"
+        android:layout_marginTop="8dp"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp">
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:numStars="5"
+        android:id="@+id/rating_stars"
+        style="@style/Widget.AppCompat.RatingBar.Small"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/rating_stars"
+        android:text="888 Ratings"
+        android:gravity="center"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="32dp"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="48dp"
+        android:layout_below="@+id/rating_stars"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MRP ₹ 975.00"
+            android:gravity="center"
+            android:id="@+id/mrp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="8% OFF"
+            android:padding="4dp"
+            android:textSize="12dp"
+            android:textColor="#FFFFFF"
+            android:layout_toRightOf="@+id/mrp"
+            android:layout_marginLeft="16dp"
+            android:background="@drawable/offer_bg"
+
+            android:id="@+id/offer"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="₹ 897.00"
+            android:layout_below="@+id/mrp"
+            android:layout_marginTop="8dp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:id="@+id/sale_price"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Including all taxes"
+            android:layout_below="@+id/mrp"
+            android:layout_marginTop="8dp"
+            android:textStyle="bold"
+            android:textSize="12dp"
+            android:layout_marginLeft="16dp"
+            android:layout_toRightOf="@+id/sale_price"
+            android:id="@+id/tax_prompt"/>
+
+        <TextView
+            android:id="@+id/add_to_cart_button"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="61dp"
+            android:layout_marginBottom="8dp"
+            android:layout_toRightOf="@+id/tax_prompt"
+            android:background="@drawable/ripple_bg"
+            android:gravity="center"
+            android:text="Add To Cart"
+            android:textColor="#FFFFFF"
+            android:textSize="16dp"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="128dp"
+        android:background="@drawable/dashed_bg"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:text="Offers For You"
+            android:textStyle="bold"/>
+    </RelativeLayout>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="512dp"
+        android:layout_marginTop="16dp">
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="#FFFFFF">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Description of the Product"
+                android:textStyle="bold"
+                android:layout_gravity="center|left"
+                android:gravity="center|left"
+                android:textSize="16dp"
+                android:layout_marginTop="16dp"
+                android:paddingLeft="32dp"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="512dp"
+        android:layout_marginTop="16dp">
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="#FFFFFF">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="16dp"
+                android:layout_margin="16dp"
+                android:text="Ratings and Reviews"/>
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_margin="16dp"
+                android:background="#f5f5f5"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="24dp"
+                    android:text="4.3/5"
+                    android:textStyle="bold"
+                    android:layout_margin="16dp"
+                    android:id="@+id/rating_count"/>
+                <RatingBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/rating_show_readonly"
+                    android:layout_gravity="center|left"
+                    android:scaleX=".5"
+                    android:scaleY=".5"
+                    android:transformPivotX="0dp"
+                    android:transformPivotY="0dp"
+                    android:isIndicator="true"/>
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="888 Ratings"
+                android:textSize="12dp"
+                android:layout_marginRight="32dp"
+                android:layout_gravity="end"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.cardview.widget.CardView>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+    </ScrollView>
+</androidx.appcompat.widget.LinearLayoutCompat>

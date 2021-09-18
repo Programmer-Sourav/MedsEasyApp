@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "802551948402",
+    "project_id": "medseasy-f0383",
+    "storage_bucket": "medseasy-f0383.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:802551948402:android:a5fecf826332c2295fceeb",
+        "android_client_info": {
+          "package_name": "com.portfolio.apps.pharmeasymeds"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "802551948402-vaa8bs4jl1hkhglc2ebc25q02en9qskj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAqNP3wlAdnJa9_VDmPomlPaAMbQq0KLh4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "802551948402-vaa8bs4jl1hkhglc2ebc25q02en9qskj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

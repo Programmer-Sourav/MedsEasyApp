@@ -1,0 +1,1621 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.portfolio.apps.pharmeasymeds.MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+        <LinearLayout
+            android:id="@+id/top_layout"
+            android:layout_width="match_parent"
+            android:layout_height="148dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal"
+                android:weightSum="5">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_margin="8dp"
+                        android:src="@mipmap/easy_meds_icon"
+                        android:contentDescription="@string/icon" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="24dp"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center"
+                        android:text="@string/app_name"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/offer"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_margin="8dp"
+                    android:layout_weight="0.5"
+                    android:src="@mipmap/offer"
+                    android:contentDescription="@string/offer" />
+
+                <ImageView
+                    android:id="@+id/cart"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="0.5"
+                    android:src="@mipmap/cart"
+                    android:contentDescription="@string/cart" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_margin="8dp"
+                    android:gravity="center"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:text="@string/deliver_to"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:id="@+id/pincode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:paddingEnd="8dp"
+                    android:paddingStart="8dp"
+                    android:text="@string/PINCODE"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/city_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:paddingEnd="8dp"
+                    android:text="@string/CITY"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/update_new_location"
+                    android:layout_width="16dp"
+                    android:layout_height="24dp"
+                    android:layout_marginTop="8dp"
+                    android:src="@mipmap/eapand_arrow"
+                    android:contentDescription="@string/expand_arrow" />
+            </LinearLayout>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/search_bg"
+                android:hint="@string/search_prompt"
+                android:padding="8dp"
+                android:textColor="#000000"
+                android:textColorHint="#696969"
+                android:textSize="16sp"
+                android:importantForAutofill="no"
+                android:inputType="text" />
+        </LinearLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:id="@+id/banner_slide_holder"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:scrollbars="none"
+            app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    app:cardCornerRadius="6dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.smarteist.autoimageslider.SliderView
+                        android:id="@+id/imageSlider"
+                        android:layout_width="match_parent"
+                        android:layout_height="148dp"
+                        app:sliderAnimationDuration="600"
+                        app:sliderAutoCycleDirection="back_and_forth"
+                        app:sliderAutoCycleEnabled="true"
+                        app:sliderIndicatorAnimationDuration="600"
+                        app:sliderIndicatorGravity="center_horizontal|bottom"
+                        app:sliderIndicatorMargin="15dp"
+                        app:sliderIndicatorOrientation="horizontal"
+                        app:sliderIndicatorPadding="3dp"
+                        app:sliderIndicatorRadius="2dp"
+                        app:sliderIndicatorSelectedColor="#5A5A5A"
+                        app:sliderIndicatorUnselectedColor="#FFF"
+                        app:sliderScrollTimeInSec="1"
+                        app:sliderStartAutoCycle="true" />
+
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:id="@+id/image_representation"
+                    android:layout_width="match_parent"
+                    android:layout_height="168dp"
+                    android:layout_marginTop="4dp"
+                    android:orientation="horizontal"
+                    android:weightSum="3"
+                    app:layout_constraintTop_toBottomOf="@+id/banner_slide"
+                    android:baselineAligned="false">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="168dp"
+                        android:layout_marginStart="4dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/background_representative"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/order_medicines"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:background="@color/colorPrimaryDark"
+                            android:src="@mipmap/med_order_dummy"
+                            android:contentDescription="TODO" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="32dp"
+                                android:layout_marginStart="8dp"
+                                android:gravity="center"
+                                android:paddingStart="8dp"
+                                android:text="@string/Off_Order"
+                                android:textColor="@android:color/holo_red_light"
+                                android:textSize="12sp"
+                                android:textStyle="bold"
+                                tools:ignore="RtlSymmetry" />
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_margin="4dp"
+                                android:src="@mipmap/order_1" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="168dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/background_representative"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/health_buys"
+                            android:layout_width="wrap_content"
+                            android:layout_height="128dp"
+                            android:background="@color/colorPrimaryDark"
+                            android:src="@mipmap/healthcare_dummy_3" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="32dp"
+                                android:layout_marginStart="8dp"
+                                android:gravity="center"
+                                android:paddingStart="8dp"
+                                android:text="@string/upto_60_off"
+                                android:textColor="@android:color/holo_red_light"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_margin="4dp"
+                                android:src="@mipmap/buy_1" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="168dp"
+                        android:layout_marginEnd="4dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/background_representative"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/lab_test"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:src="@mipmap/covid_dummy"
+
+                            />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="32dp"
+                                android:layout_marginStart="8dp"
+                                android:gravity="center"
+                                android:paddingStart="8dp"
+                                android:text="@string/upto_60_off"
+                                android:textColor="@android:color/holo_red_light"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_margin="4dp"
+                                android:src="@mipmap/buy_2" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/footer_banner"
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/purple_bg"
+                    android:orientation="horizontal"
+                    app:layout_constraintTop_toBottomOf="@+id/image_representation">
+
+                    <TextView
+                        android:layout_width="72dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:paddingStart="8dp"
+                        android:text="@string/vip"
+                        android:textColor="#FFD700"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:paddingStart="8dp"
+                        android:text="@string/vip_benefits"
+                        android:textColor="#FFFFFF"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/category_shopping"
+                    android:layout_width="match_parent"
+                    android:layout_height="512dp"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintTop_toBottomOf="@+id/footer_banner">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="72dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="28dp"
+                                android:layout_margin="8dp"
+                                android:text="@string/shop_by_category"
+                                android:textColor="#000000"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="28dp"
+                                android:layout_marginStart="8dp"
+                                android:background="@drawable/offer_bg"
+                                android:padding="4dp"
+                                android:text="UPTO 60% OFF"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                        <GridView
+                            android:layout_width="match_parent"
+                            android:layout_height="432dp"
+                            android:numColumns="4"
+                            android:layout_margin="16dp"
+                            android:verticalSpacing="4dp"
+                            android:horizontalSpacing="4dp"
+                            android:id="@+id/medicine_category_grid"
+                            >
+                        </GridView>
+                        <!--<LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="104dp"
+                            android:layout_marginTop="16dp"
+                            android:orientation="horizontal"
+                            android:weightSum="4"
+                            android:baselineAligned="false">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_margin="4dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="64dp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginLeft="4dp"
+                                    android:layout_marginRight="4dp"
+                                    android:background="@drawable/background_drawable"
+                                    android:src="@mipmap/covid_essentials" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="Covid Essentials"
+                                    android:textColor="#000000"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold">
+
+                                </androidx.appcompat.widget.AppCompatTextView>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_margin="4dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="64dp"
+                                    android:background="@drawable/background_drawable"
+                                    android:src="@mipmap/devices" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:text="Devices"
+                                    android:textColor="#000000"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold">
+
+                                </androidx.appcompat.widget.AppCompatTextView>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_margin="4dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="64dp"
+                                    android:background="@drawable/background_drawable"
+                                    android:src="@mipmap/nutrition_fitness" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="Nutrition-Fitness"
+                                    android:textColor="#000000"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold">
+
+                                </androidx.appcompat.widget.AppCompatTextView>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_margin="4dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="64dp"
+                                    android:background="@drawable/background_drawable"
+                                    android:src="@mipmap/personal_care" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:text="Personal Care"
+                                    android:textColor="#000000"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold">
+
+                                </androidx.appcompat.widget.AppCompatTextView>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="104dp"
+                            android:layout_marginTop="4dp"
+                            android:orientation="horizontal"
+                            android:weightSum="4"
+                            android:baselineAligned="false">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_margin="8dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="64dp"
+                                    android:background="@drawable/background_drawable"
+                                    android:src="@mipmap/ayurvedic" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:text="Ayurvedic Wellness"
+                                    android:textColor="#000000"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold">
+
+                                </androidx.appcompat.widget.AppCompatTextView>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_margin="4dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="64dp"
+                                    android:background="@drawable/background_drawable"
+                                    android:src="@mipmap/baby_care" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:text="Baby Care"
+                                    android:textColor="#000000"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold">
+
+                                </androidx.appcompat.widget.AppCompatTextView>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_margin="4dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="64dp"
+                                    android:background="@drawable/background_drawable"
+                                    android:src="@mipmap/skin_care_1" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="Skin Care"
+                                    android:textColor="#000000"
+                                    android:textSize="12sp">
+
+                                </androidx.appcompat.widget.AppCompatTextView>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_margin="4dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="64dp"
+                                    android:background="@drawable/background_drawable"
+                                    android:src="@mipmap/diabetic_care" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="Diabetic Care"
+                                    android:textColor="#000000"
+                                    android:textSize="12sp">
+
+                                </androidx.appcompat.widget.AppCompatTextView>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="104dp"
+                            android:layout_marginTop="4dp"
+                            android:orientation="horizontal"
+                            android:weightSum="4"
+                            android:baselineAligned="false">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_margin="4dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="64dp"
+                                    android:background="@drawable/background_drawable"
+                                    android:src="@mipmap/sexual_well" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="Sexual Wellness"
+                                    android:textColor="#000000"
+                                    android:textSize="12sp">
+
+                                </androidx.appcompat.widget.AppCompatTextView>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_margin="4dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="64dp"
+                                    android:background="@drawable/background_drawable"
+                                    android:src="@mipmap/short_term" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="Acute Problems"
+                                    android:textColor="#000000"
+                                    android:textSize="12sp">
+
+                                </androidx.appcompat.widget.AppCompatTextView>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_margin="4dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="64dp"
+                                    android:background="@drawable/background_drawable"
+                                    android:src="@mipmap/daily_cure" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="Lifestyle Ailments"
+                                    android:textColor="#000000"
+                                    android:textSize="12sp">
+
+                                </androidx.appcompat.widget.AppCompatTextView>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_margin="4dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="64dp"
+                                    android:background="@drawable/background_drawable"
+                                    android:src="@mipmap/home_care" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="Home Care"
+                                    android:textColor="#000000"
+                                    android:textSize="12sp">
+
+                                </androidx.appcompat.widget.AppCompatTextView>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="104dp"
+                            android:layout_marginTop="16dp"
+                            android:orientation="horizontal"
+                            android:weightSum="4"
+                            android:baselineAligned="false">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_margin="4dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="64dp"
+                                    android:background="@drawable/background_drawable"
+                                    android:src="@mipmap/women_care" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="Women Care"
+                                    android:textColor="#000000"
+                                    android:textSize="12sp">
+
+                                </androidx.appcompat.widget.AppCompatTextView>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_margin="4dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="64dp"
+                                    android:background="@drawable/background_drawable"
+                                    android:src="@mipmap/health_food" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="Health Products"
+                                    android:textColor="#000000"
+                                    android:textSize="12sp">
+
+                                </androidx.appcompat.widget.AppCompatTextView>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_margin="4dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="64dp"
+                                    android:background="@drawable/background_drawable"
+                                    android:src="@mipmap/ortho_care" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="Ortho Care"
+                                    android:textColor="#000000"
+                                    android:textSize="12sp">
+
+                                </androidx.appcompat.widget.AppCompatTextView>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_margin="4dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="64dp"
+                                    android:background="@drawable/background_drawable"
+                                    android:src="@mipmap/pain_cure"/>
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:padding="4dp"
+                                    android:text="Pain Relief"
+                                    android:textColor="#000000">
+
+                                </androidx.appcompat.widget.AppCompatTextView>
+                            </LinearLayout>
+                        </LinearLayout>-->
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/recommended_for_you"
+                    android:layout_width="match_parent"
+                    android:layout_height="352dp"
+                    android:layout_marginTop="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:padding="8dp"
+                            android:text="Recommended For You"
+                            android:textColor="#000000"
+                            android:textSize="16sp"
+                            android:textStyle="bold"/>
+
+                        <HorizontalScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="256dp"
+                            android:scrollbars="none">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal"
+                                android:baselineAligned="false">
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/background_drawable"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/discount"
+                                        android:layout_width="60dp"
+                                        android:layout_height="24dp"
+                                        android:background="@drawable/offer_bg"
+                                        android:gravity="center"
+                                        android:text="15% off"
+                                        android:textColor="#FFFFFF"
+                                        android:textSize="12sp" />
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:layout_width="128dp"
+                                        android:layout_height="128dp"
+                                        android:layout_gravity="center"
+                                        android:layout_marginLeft="4dp"
+                                        android:layout_marginTop="16dp"
+                                        android:layout_marginRight="4dp"
+                                        android:src="@mipmap/rec_l1" />
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:layout_width="128dp"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:text="Lifebouy Sanitizer"
+                                        android:textColor="#000000"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold" />
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@+id/price_each_item"
+                                        android:layout_width="128dp"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:text="Rs. 120"
+                                        android:textColor="#000000"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/background_drawable"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/discount_2"
+                                        android:layout_width="60dp"
+                                        android:layout_height="24dp"
+                                        android:background="@drawable/offer_bg"
+                                        android:gravity="center"
+                                        android:text="15% off"
+                                        android:textColor="#FFFFFF"
+                                        android:textSize="12sp" />
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:layout_width="128dp"
+                                        android:layout_height="128dp"
+                                        android:layout_gravity="center"
+                                        android:layout_marginLeft="4dp"
+                                        android:layout_marginTop="16dp"
+                                        android:layout_marginRight="4dp"
+                                        android:src="@mipmap/rec_l2" />
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:layout_width="128dp"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:text="Dettol Sanitizer"
+                                        android:textColor="#000000"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold" />
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@+id/price_each_item1"
+                                        android:layout_width="128dp"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:text="Rs. 240"
+                                        android:textColor="#000000"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/background_drawable"
+                                    android:orientation="vertical">
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:layout_width="128dp"
+                                        android:layout_height="128dp"
+                                        android:layout_gravity="center"
+                                        android:layout_marginLeft="4dp"
+                                        android:layout_marginRight="4dp"
+                                        android:src="@mipmap/rec_l3" />
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:layout_width="128dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="16dp"
+                                        android:gravity="center"
+                                        android:text="IODEX ultra gel"
+                                        android:textColor="#000000"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold" />
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@+id/price_each_item2"
+                                        android:layout_width="128dp"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:text="Rs. 120"
+                                        android:textColor="#000000"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </HorizontalScrollView>
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/covid_essentials"
+                    android:layout_width="match_parent"
+                    android:layout_height="900dp"
+                    android:layout_marginTop="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:padding="8dp"
+                            android:text="Trending Covid Essentials"
+                            android:textColor="#000000"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:baselineAligned="false">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="292dp"
+                                android:layout_margin="4dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/background_drawable"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/tce_1"
+                                    android:layout_width="60dp"
+                                    android:layout_height="24dp"
+                                    android:background="@drawable/offer_bg"
+                                    android:gravity="center"
+                                    android:text="15% off"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="12sp" />
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="192dp"
+                                    android:layout_height="192dp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginLeft="4dp"
+                                    android:layout_marginTop="16dp"
+                                    android:layout_marginRight="4dp"
+                                    android:src="@mipmap/r1" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="Energy Drinks"
+                                    android:textColor="#000000"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="292dp"
+                                android:layout_margin="4dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/background_drawable"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/tce3"
+                                    android:layout_width="60dp"
+                                    android:layout_height="24dp"
+                                    android:background="@drawable/offer_bg"
+                                    android:gravity="center"
+                                    android:text="15% off"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="12sp" />
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="192dp"
+                                    android:layout_height="192dp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginLeft="4dp"
+                                    android:layout_marginTop="16dp"
+                                    android:layout_marginRight="4dp"
+                                    android:src="@mipmap/r2" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="Energy Drinks"
+                                    android:textColor="#000000"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:baselineAligned="false">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_margin="4dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/background_drawable"
+                                android:orientation="vertical">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="192dp"
+                                    android:layout_height="192dp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginLeft="4dp"
+                                    android:layout_marginRight="4dp"
+                                    android:src="@mipmap/r3" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="16dp"
+                                    android:gravity="center"
+                                    android:text="Energy Drinks"
+                                    android:textColor="#000000"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold"/>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_margin="4dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/background_drawable"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/tce4"
+                                    android:layout_width="60dp"
+                                    android:layout_height="24dp"
+                                    android:background="@drawable/offer_bg"
+                                    android:gravity="center"
+                                    android:text="15% off"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="12sp"/>
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="192dp"
+                                    android:layout_height="192dp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginLeft="4dp"
+                                    android:layout_marginTop="16dp"
+                                    android:layout_marginRight="4dp"
+                                    android:src="@mipmap/r4"/>
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="Energy Drinks"
+                                    android:textColor="#000000"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold"/>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:baselineAligned="false">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_margin="4dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/background_drawable"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/tce2"
+                                    android:layout_width="60dp"
+                                    android:layout_height="24dp"
+                                    android:background="@drawable/offer_bg"
+                                    android:gravity="center"
+                                    android:text="15% off"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="12sp"/>
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="192dp"
+                                    android:layout_height="192dp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginLeft="4dp"
+                                    android:layout_marginTop="16dp"
+                                    android:layout_marginRight="4dp"
+                                    android:src="@mipmap/r5" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="128dp"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="Energy Drinks"
+                                    android:textColor="#000000"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_margin="4dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/background_drawable"
+                                android:orientation="vertical">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="192dp"
+                                    android:layout_height="192dp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginLeft="4dp"
+                                    android:layout_marginRight="4dp"
+                                    android:src="@mipmap/r6" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="16dp"
+                                    android:gravity="center"
+                                    android:text="Energy Drinks"
+                                    android:textColor="#000000"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/imuunity_boosters"
+                    android:layout_width="match_parent"
+                    android:layout_height="574dp"
+                    android:layout_marginTop="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="352dp"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/immunity_booster_icon"
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:layout_margin="16dp"
+                                android:src="@mipmap/shield" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="Immunity Boosters"
+                                android:textColor="#000000" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="352dp"
+                            android:orientation="horizontal">
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/immunity_boosters_list"
+                                android:layout_width="match_parent"
+                                android:layout_height="352dp" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="32dp"
+                            android:text="Featured Brands"
+                            android:textColor="#000000"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="352dp"
+                            android:orientation="horizontal">
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/featured_brand_list"
+                                android:layout_width="match_parent"
+                                android:layout_height="224dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/deals_of_the_day"
+                    android:layout_width="match_parent"
+                    android:layout_height="400dp"
+                    android:layout_marginTop="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/deals_icon"
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
+                                android:layout_margin="16dp"
+                                android:src="@mipmap/shield" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center|left"
+                                android:layout_gravity="center"
+                                android:text="Deals of the Day"
+                                android:textColor="#000000" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="360dp"
+                            android:orientation="horizontal">
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/dealsOfTheDayList"
+                                android:layout_width="match_parent"
+                                android:layout_height="360dp"
+                                android:layout_gravity="center|left"
+                                android:layoutAnimation="@anim/layout_animation"
+                                />
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:elevation="8dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="32dp"
+                        android:background="@drawable/background_recently_browsed">
+                        <ImageView
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:id="@+id/browse_image"
+                            android:layout_margin="8dp"
+                            android:src="@mipmap/browse_history"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="16dp"
+                            android:text="@string/browsed_app"
+                            android:layout_margin="8dp"
+                            android:id="@+id/browsed_items_text"
+                            android:layout_toRightOf="@+id/browse_image"
+                            android:gravity="center"/>
+
+                        <GridView
+                            android:layout_width="match_parent"
+                            android:layout_height="590dp"
+                            android:numColumns="2"
+                            android:layout_margin="16dp"
+                            android:verticalSpacing="4dp"
+                            android:horizontalSpacing="4dp"
+                            android:id="@+id/medicine_browsed"
+                            android:layout_below="@+id/browse_image"
+                            android:nestedScrollingEnabled="false"
+                            android:scrollbars="none"
+                            >
+                        </GridView>
+                    </RelativeLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/function_holder"
+                >
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:background="@drawable/background_drawable"
+                        android:layout_margin="16dp"
+                        android:weightSum="1"
+                        android:orientation="horizontal">
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@mipmap/call_icon"
+                            android:id="@+id/call_image"
+                            android:layout_gravity="center"
+                            android:layout_weight="0.1"
+                            android:layout_margin="16dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Call to Order"
+                            android:textStyle="bold"
+                            android:layout_gravity="center"
+                            android:id="@+id/call_to_order"
+                            android:layout_toRightOf="@+id/call_image"
+                            android:layout_weight="0.6"
+                            android:gravity="center|left"/>
+                        <TextView
+                            android:layout_width="48dp"
+                            android:layout_height="32dp"
+                            android:text="Call"
+                            android:textStyle="bold"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:layout_weight="0.3"
+                            android:background="@drawable/button_background"
+                            android:textColor="#FFFFFF"/>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:background="@drawable/background_drawable"
+                        android:layout_margin="16dp"
+                        android:weightSum="1"
+                        android:orientation="horizontal">
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@mipmap/online_support"
+                            android:id="@+id/help_image"
+                            android:layout_gravity="center"
+                            android:layout_weight="0.1"
+                            android:layout_margin="16dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Need Help?"
+                            android:textStyle="bold"
+                            android:layout_gravity="center"
+                            android:id="@+id/need_help"
+                            android:layout_toRightOf="@+id/call_image"
+                            android:layout_weight="0.9"
+                            android:gravity="center|left"/>
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:background="@drawable/background_drawable"
+                        android:layout_margin="16dp"
+                        android:weightSum="1"
+                        android:orientation="horizontal">
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@mipmap/article"
+                            android:id="@+id/article_img"
+                            android:layout_gravity="center"
+                            android:layout_weight="0.1"
+                            android:layout_margin="16dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Read Articles"
+                            android:textStyle="bold"
+                            android:layout_gravity="center"
+                            android:id="@+id/read_articles"
+                            android:layout_toRightOf="@+id/call_image"
+                            android:layout_weight="0.6"
+                            android:gravity="center|left"/>
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:background="@drawable/background_drawable"
+                        android:layout_margin="16dp"
+                        android:weightSum="1"
+                        android:orientation="horizontal">
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@mipmap/notification"
+                            android:id="@+id/dosage_image"
+                            android:layout_gravity="center"
+                            android:layout_weight="0.1"
+                            android:layout_margin="16dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Dosage Reminder"
+                            android:textStyle="bold"
+                            android:layout_gravity="center"
+                            android:id="@+id/dosage_reminder"
+                            android:layout_toRightOf="@+id/call_image"
+                            android:layout_weight="0.6"
+                            android:gravity="center|left"/>
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@drawable/background_drawable"
+                    android:layout_margin="16dp"
+                    android:weightSum="1"
+                    android:orientation="horizontal">
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@mipmap/prescription"
+                        android:id="@+id/prescription_image"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.1"
+                        android:layout_margin="16dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Upload Prescription"
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
+                        android:id="@+id/upload_prescription"
+                        android:layout_toRightOf="@+id/call_image"
+                        android:layout_weight="0.6"
+                        android:gravity="center|left"/>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="416dp"
+                    android:orientation="vertical"
+                    android:layout_gravity="top"
+                    android:id="@+id/articles_holder"
+                    >
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/health_articles"
+                        android:layout_width="match_parent"
+                        android:layout_height="400dp"
+                        android:layout_marginTop="16dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="60dp"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center|left"
+                                    android:layout_gravity="center"
+                                    android:text="Health Articles"
+                                    android:textSize="16dp"
+                                    android:layout_margin="16dp"
+                                    android:textColor="#000000" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="360dp"
+                                android:orientation="horizontal">
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/healthArticleList"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="360dp"
+                                    android:layout_gravity="center|left"
+                                    />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </ScrollView>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

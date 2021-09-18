@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">MedsEasy</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="icon">ICON</string>
+    <string name="offer">OFFER</string>
+    <string name="cart">CART</string>
+    <string name="deliver_to">Deliver To</string>
+    <string name="PINCODE">799144</string>
+    <string name="CITY">Udaipur</string>
+    <string name="expand_arrow">expand_arrow</string>
+    <string name="search_prompt">Search for medicines or healthcare products</string>
+    <string name="banner_slide">banner_slide</string>
+    <string name="Off_Order">Flat 15% Off</string>
+    <string name="upto_60_off">Upto 60% Off</string>
+    <string name="vip">VIP</string>
+    <string name="vip_benefits">Get VIP access and avail Free home delivery and special discounts on medicines and many other benefits.</string>
+    <string name="shop_by_category">Shop By Category</string>
+    <string name="browsed_app">Recently Browsed Items</string>
+    <string name="delivery_prompt">Order above Rs.1000 to save on delivery charges. Free delivery with cart value above Rs.1500</string>
+    <string name="cart_value_text">Cart Value</string>
+    <string name="delivery_charge">Delivery Charge</string>
+    <string name="amount_to_be_paid">Amount to be paid</string>
+    <string name="amount_to_be_paid_prompt">Amount to be paid</string>
+    <string name="channel_name">UploadChannel</string>
+    <string name="channel_description">Uploading Prescription</string>
+    <string name="notification_channel_id">upload_notification_channel_id</string>
+    <string name="notification_title">Upload Document</string>
+    <string name="cancel_download">Cancel</string>
+</resources>
